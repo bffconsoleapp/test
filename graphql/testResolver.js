@@ -1,31 +1,3 @@
-```graphql
-schema-codegen-start
-const typeDefs = `
-  type Query {
-    getPremiumAdjustment(id: ID!): PremiumAdjustment
-  }
-
-  type Mutation {
-    editPremiumAdjustment(input: EditPremiumAdjustmentInput!): PremiumAdjustment
-  }
-
-  type PremiumAdjustment {
-    id: ID!
-    amount: Float
-    reason: String
-  }
-
-  input EditPremiumAdjustmentInput {
-    id: ID!
-    amount: Float
-    reason: String
-  }
-`;
-schema-codegen-end
-```
-
-```javascript
-resolver-codegen-start
 const premiumAdjustments = [
   { id: '1', amount: 200.0, reason: 'Promotion' },
   { id: '2', amount: 150.0, reason: 'Loyalty Discount' }
@@ -51,5 +23,5 @@ const resolvers = {
     },
   },
 };
-resolver-codegen-end
-```
+
+export default resolvers;
